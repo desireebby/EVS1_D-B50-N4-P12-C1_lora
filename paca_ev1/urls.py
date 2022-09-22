@@ -15,12 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from paca_app1 import views
+from paca_app1 import views as paca_app1
+from paca_app2 import views as paca_app2
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hola/', views.display),
-    path('ahora/', views.displayDateTime),
+    path('hola/', paca_app1.display),
+    path('ahora/', paca_app1.displayDateTime),
+    path('hola2/', paca_app2.display),
+    path('ahora2/', paca_app2.displayDateTime),
     
-
 ]
